@@ -8,7 +8,6 @@ top_cryptos = [
 ,'BNB-BTC.parquet'
 ,'XLM-BTC.parquet'
 ,'LTC-BTC.parquet'
-,'TUSD-BTC.parquet'
 ,'USDT-BTC.parquet'
 ]
 
