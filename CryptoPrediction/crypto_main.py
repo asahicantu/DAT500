@@ -54,23 +54,25 @@ def test_model(currency):
     print("Accuracy Score:", cu.get_accuracy(model, data))
     cu.plot_graph(model, data)
 
+def test_datamodel():
 
+    # %%
+    DATA_PATH = "D:\\Binance\\Misc\\binance-full-history"
+    currencies = os.listdir(DATA_PATH)
+    currencies = [x for x in currencies if '.parquet' in x]
+    #%%
+    currency_file = currencies[0]
+    currency = os.path.splitext(currency_file)[0]
+    file_path = os.path.join(DATA_PATH,currency_file)
 
-# %%
-DATA_PATH = "D:\\Binance\\Misc\\binance-full-history"
-currencies = os.listdir(DATA_PATH)
-currencies = [x for x in currencies if '.parquet' in x]
-#%%
-currency_file = currencies[0]
-currency = os.path.splitext(currency_file)[0]
-file_path = os.path.join(DATA_PATH,currency_file)
-data = cu.load_data(file_path,'hour', N_STEPS, window_offset=WINDOW_OFFSET, test_size=TEST_SIZE, feature_cols=FEATURE_COLS)
-train_model(currencies[0])
+    df = pd.read_parquet(file_path) 
 
-# %%
-import importlib
+    data = cu.load_data(df,'hour', N_STEPS, window_offset=WINDOW_OFFSET, test_size=TEST_SIZE, feature_cols=FEATURE_COLS)
+    train_model(currencies[0])
 
-# %%
-importlib.reload(cu)
+    # %%
+    import importlib
+    # %%
+    importlib.reload(cu)
 
 # %%
