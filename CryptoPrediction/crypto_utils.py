@@ -190,7 +190,7 @@ def plot_graphs(models,offset,window_offset):
             col +=1
             
     fig.suptitle(tit,fontsize=20)
-    fig.subplots_adjust(top=0.9,hspace = 0.5 )
+    fig.subplots_adjust(top=0.96,hspace = 0.5 )
     
     handles, labels = ax.get_legend_handles_labels()
     
@@ -203,7 +203,7 @@ def plot_graphs(models,offset,window_offset):
            )
     
            
-    fig.set_size_inches(16, 10, forward=True)
+    fig.set_size_inches(16, 10 * n_plots/2, forward=True)
     
 
     
