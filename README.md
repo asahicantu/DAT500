@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DAT500 Final proyect repository
 
 ## Authors:
